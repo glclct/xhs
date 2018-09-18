@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+
+/* 清除浮动 */
+
+.clear:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+/* 解决外边距 */
+
+.overflow:before {
+    content: "";
+    display: table;
+}
+
+div {
+    display: block;
+}
+
+body {
+    background: #eee;
+}
+
+
+/* @media screen and (max-width: 1440px) {
+    #registMain,
+    .reg_header,
+    .map {
+        width: 800px !important;
+         height: 576px !important; 
+
+
+}
+
+}
+*/
+
+
+/* 页头 */
+
+#registMain {
+    width: 960px;
+    height: 720px;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+    background: white;
+}
+
+.reg_header {
+    width: 960px;
+    height: 80px;
+    margin: 0 auto;
+    /* border: 1px dotted purple; */
+    z-index: 1;
+    /* float: left; */
+}
+
+.regMsg {
+    font-size: 14px;
+    float: right;
+    margin-right: 5%;
+    margin-top: 3%;
+}
+
+.regMsg>a {
+    color: lightskyblue;
+}
+
+.regMsg>span {
+    color: lightslategray;
+    opacity: 0.5;
+}
+
+.regMsg>a:hover {
+    text-decoration: none;
+}
+
+
+/* 主体 */
+
+.map {
+    width: 960px;
+    height: 600px;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+    /* float: left; */
+}
+
+.next {
+    width: 76%;
+    height: 76%;
+    border-radius: 2px;
+    /* float: left; */
+    background-color: #fff;
+    /* border: 2px dashed #d4d4d4; */
+    padding-right: 40px;
+    margin-top: 5%;
+    margin-left: 12%;
+}
+
+.rigster_size {
+    font-size: 20px;
+    margin-bottom: 10%;
+    padding-bottom: 5px;
+    margin-top: -10%;
+    font-weight: 700;
+    color: rgb(7, 138, 219);
+    border-bottom: 2px solid rgb(4, 152, 243);
+    width: 80px;
+}
+
+.mapNext {
+    width: 360px;
+    height: 280px;
+    border-radius: 2px;
+    float: left;
+    background-color: #fff;
+    border-right: 1px dashed #d4d4d4;
+    padding-right: 40px;
+    margin-top: 10%;
+    margin-left: 5%;
+}
+
+.otherlogin {
+    width: 30%;
+    height: 80%;
+    /* border: 1px solid darkblue; */
+    float: right;
+    margin-top: 10%;
+}
+
+.otheridea {
+    display: inline-block;
+    height: 100%;
+    font-size: 14px;
+    color: lightslategray;
+}
+
+.regip {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: block;
+    height: 60px;
+}
+
+.regip .reginput {
+    width: 100%;
+    height: 36px;
+    border-radius: 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-color: #ededed;
+    background: 0 0;
+    font-weight: 200;
+    font-size: 10px;
+    opacity: 0.7;
+}
+
+.btn_register {
+    position: relative;
+    margin-top: 20px;
+}
+
+.autologin {
+    margin-top: 20%;
+}
+
+.autologin2 {
+    margin-left: 30%;
+    margin-top: 100%;
+    color: rgb(28, 126, 238);
+    font-size: 16px;
+    font-family: "仿宋";
+    font-weight: 700;
+}
+
+.autologin2>a:hover {
+    text-decoration: none;
+}
+
+.ul1 {
+    margin-top: 20%;
+    margin-left: 10%;
+}
+
+.ul1 li {
+    display: block;
+    margin-left: 22px;
+    float: left;
+}
+
+.zhucema {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    z-index: 2;
+    height: 30px;
+    width: 80px;
+    font-size: 12px;
+    border-radius: 5px;
+    background-color: powderblue;
+    color: floralwhite;
+    outline: 0;
+}
+
+.regip .reginput:hover {
+    border-bottom: 2px solid red;
+}
+
+.regiser_btn {
+    font-size: 16px;
+    line-height: 30px;
+    display: inline-block;
+    height: 40px;
+    margin: 2% 15%;
+    padding: 0 30px;
+    width: 80%;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    background: lightblue;
+    border-radius: 2px;
+    transition: .1s linear;
+}
+
+
+/* 页脚 */
+
+.regfoot {
+    height: 40px;
+    background: whitesmoke;
+    /* border: 1px solid purple; */
+    text-align: center;
+    line-height: 40px;
+}
+
+.footMsg a,
+.footMsg>span {
+    font-size: 14px;
+    color: lightslategray;
+}
+
+.wb,
+.qq {
+    height: 23px !important;
+}
+
+a>.plic {
+    width: 16px;
+    margin-bottom: 3px;
+}

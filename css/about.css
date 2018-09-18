@@ -1,0 +1,633 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+
+/* 清除浮动 */
+
+.clear:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+/* 解决外边距 */
+
+.overflow:before {
+    content: "";
+    display: table;
+}
+
+div {
+    display: block;
+}
+
+#firstDiv {
+    position: relative;
+}
+
+
+/* 页头 */
+
+.myNav {
+    width: 100%;
+    height: 3em;
+    background: white;
+    border-bottom: 1px solid transparent;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.06);
+    position: fixed;
+    z-index: 10;
+}
+
+.navHeader {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    z-index: inherit;
+}
+
+.navPic {
+    float: left;
+    width: 5em;
+    height: 100%;
+}
+
+.navPic>img {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 6em;
+    width: 72px;
+    height: 25px;
+    margin-top: 18px;
+}
+
+.navList {
+    height: 100%;
+    text-align: center;
+    line-height: 3em;
+    margin-right: 10em;
+}
+
+.navList>li {
+    height: 100%;
+    line-height: 2em;
+    display: inline-block;
+    list-style: none;
+    transition: all 1s;
+}
+
+.navList li a {
+    padding: 10px 10px;
+    line-height: 3em;
+    color: #555;
+    transition: all 1s;
+}
+
+ul {
+    list-style: none;
+    margin-top: -7px;
+}
+
+.dropCss {
+    display: flex;
+    justify-content: center;
+}
+
+.dropCss>li {
+    margin: 0 2%;
+}
+
+.drop>li {
+    opacity: 0;
+    transform-origin: top center;
+    margin: -5px;
+}
+
+.drop li a {
+    margin: -23px;
+}
+
+.drop li a,
+a {
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+
+/* ------------------纯css菜单，后期考虑改用jq------------------ */
+
+
+/* css动画 */
+
+@keyframes menu {
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.dropCss {
+    letter-spacing: 1px;
+}
+
+.dropCss li:hover .menu li:first-of-type {
+    animation: menu 0.3s ease-in-out forwards;
+    animation-delay: 0.3s;
+}
+
+.dropCss li:hover .menu li:nth-of-type(2) {
+    animation: menu 0.3s ease-in-out forwards;
+    animation-delay: 0.6s;
+}
+
+.dropCss li:hover .menu li:nth-of-type(3) {
+    animation: menu 0.3s ease-in-out forwards;
+    animation-delay: 0.9s;
+}
+
+.navList li a:hover {
+    text-decoration: none;
+    color: red;
+    font-weight: 800 !important;
+}
+
+
+/* 中间上方第一块区域图片 */
+
+#scetion {
+    width: 100%;
+}
+
+.sectionTop {
+    width: 1440px;
+    height: 380px;
+    margin: 0 auto;
+    /* border: 1px solid palevioletred; */
+}
+
+.sectionImg {
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 1440px) {
+    .sectionTop {
+        width: 1200px;
+        height: 300px;
+    }
+}
+
+.msg {
+    width: 960px;
+    height: 380px;
+    margin: 0 auto;
+    /* border: 1px solid palevioletred; */
+}
+
+h2 {
+    /* display: block !important; */
+    width: 960px;
+    margin: 47px 0px 23px 0px;
+    text-align: center !important;
+}
+
+.msg>span {
+    display: block;
+    width: 960px;
+    text-align: center !important;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+.sectionMid {
+    display: block;
+    width: 960px;
+    margin: 0 auto;
+}
+
+.scileImg1,
+.scileImg2,
+.scileImg3 {
+    float: left;
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+    /* border: 1px solid orangered; */
+}
+
+.scileImg1>img,
+.scileImg2>img,
+.scileImg3>img {
+    width: 80px;
+    height: 80px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 1.3rem;
+}
+
+.scileImg1>span,
+.scileImg2>span,
+.scileImg3>span {
+    display: block;
+    text-align: center;
+    margin-top: .3rem;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.f20 {
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    margin-top: 1rem !important;
+}
+
+
+/* 小红薯发展史 */
+
+.sectionDeve {
+    width: 100%;
+    height: 880px;
+    background: #fbfbfb;
+    /* border: 1px solid red; */
+}
+
+.deveTwo {
+    width: 960px;
+    height: 880px;
+    margin: 0 auto;
+}
+
+.sectionDeve h2 {
+    display: block;
+    text-align: center;
+    margin-top: 36px;
+}
+
+.deveList {
+    float: left;
+    width: 480px;
+    height: 700px;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+}
+
+.deveList ul li {
+    width: 400px;
+    height: 40px;
+    font-size: 14px;
+    opacity: .5;
+    /* margin-bottom: 13px; */
+}
+
+.deveList ul li span {
+    display: inline-block;
+}
+
+.first-child {
+    width: 60px;
+    font-size: 26px;
+    font-weight: 500;
+    margin-left: 23px;
+    /* margin-bottom: 23px;*/
+    /* margin-top: 20px; */
+}
+
+.last-child {
+    width: 255px;
+    margin-left: 23px;
+    vertical-align: middle;
+    margin-top: -10px;
+    /* margin-bottom: 10px; */
+}
+
+.sec-child {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    vertical-align: middle;
+    margin-left: 25px;
+    margin-top: -10px;
+}
+
+.deveLine {
+    width: 1px !important;
+    height: 40px !important;
+    border-radius: 0px !important;
+    background: rgba(0, 0, 0, 0.5);
+    margin-left: 109px !important;
+}
+
+.list4 {
+    margin-top: 6px !important;
+}
+
+.deveImg {
+    float: left;
+    width: 480px;
+    height: 700px;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+}
+
+.deveImg img {
+    width: 450px;
+    height: 450px;
+}
+
+
+/* 公司环境 */
+
+.proSize {
+    /* border: 1px solid saddlebrown; */
+    margin: 0 auto;
+    margin-top: 3%;
+    margin-bottom: 2%;
+}
+
+.proImg {
+    width: 100%;
+    height: 880px;
+    margin: 0 auto !important;
+}
+
+.proTop {
+    width: 1500px;
+    height: 880px;
+    margin: 0 auto;
+    margin-left: 6%;
+}
+
+.leftImg {
+    width: 920px;
+    height: 880px;
+    float: left;
+}
+
+.leftImg img:first-child {
+    width: 98%;
+}
+
+.pic50 {
+    width: 48% !important;
+    margin-top: 2%;
+    margin-right: 1.5%;
+}
+
+.rightImg {
+    width: 560px;
+    height: 880px;
+    float: left !important;
+}
+
+.rightImg img {
+    width: 98%;
+    margin-bottom: 2%;
+}
+
+@media screen and (max-width: 1440px) {
+    .proTop {
+        width: 1200px;
+        margin: 0 auto;
+    }
+    .leftImg {
+        width: 747px;
+    }
+    .rightImg {
+        width: 453px;
+    }
+}
+
+
+/* 页脚部分 */
+
+.footerAll {
+    width: 100%;
+    height: 246px;
+    display: block;
+    position: absolute;
+    top: 2568px;
+    background: #39393b;
+    border-bottom: 1px solid rgba(215, 215, 215, 0.2);
+    /* border: 2px solid red; */
+}
+
+.footerLeft {
+    width: 600px;
+    /* height: 246px; */
+    /* border: 2px solid bisque; */
+    margin-left: 10%;
+}
+
+.footerLeft-next {
+    margin-top: 3rem;
+    margin-left: 5rem;
+}
+
+.imgSize {
+    width: 230px;
+    cursor: pointer;
+}
+
+.imgSize-2 {
+    height: 28px;
+    margin-top: 20px;
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+
+/* ？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？ */
+
+
+/*.footerRight {
+    width: 600px;
+    height: 246px;
+    border: 5px solid white;
+    margin-right: 10%; 
+}*/
+
+.footerRight-next {
+    position: absolute;
+    width: 600px;
+    height: 246px;
+    /* border: 2px solid rgb(199, 180, 199); */
+    right: 0%;
+    top: 0%;
+}
+
+.footerRight-next a,
+.footerRight-next a:hover {
+    color: #d5d5d5;
+    text-decoration: none;
+}
+
+.gsxg {
+    position: absolute;
+    top: 20%;
+    right: 80%;
+    /* margin-left: 50rem;
+        margin-top: -15rem; */
+    /* border: 2px solid bisque; */
+}
+
+.nrxg {
+    position: absolute;
+    top: 20%;
+    right: 55%;
+    /* margin-left: 60rem;
+        margin-top: -15rem; */
+    /* border: 2px solid bisque; */
+}
+
+.xynr {
+    position: absolute;
+    top: 20%;
+    right: 30%;
+    display: inline;
+    /* margin-left: 70rem;
+        margin-top: -15rem; */
+    /* border: 2px solid bisque; */
+}
+
+@media screen and (max-width: 1000px) {
+    .gsxg {
+        z-index: -1;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .nrxg {
+        z-index: -1;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .xynr {
+        z-index: -1;
+    }
+}
+
+.h29 {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    float: left;
+}
+
+.h29-1 {
+    float: left;
+    margin-left: 3.3rem;
+    margin-top: -28px;
+    font-size: .8rem;
+}
+
+.f16 {
+    font-size: 16px;
+    margin-bottom: 1rem;
+    margin-right: 0%;
+}
+
+.f14 {
+    margin-bottom: .5rem;
+    font-weight: lighter;
+}
+
+@media screen and (max-width: 576px) {
+    .footerRight {
+        overflow: hidden;
+    }
+}
+
+
+/* 底部链接 */
+
+.btn-line {
+    width: 100%;
+    height: 111px;
+    display: block;
+    position: absolute;
+    top: 2814px;
+    background: #39393b;
+    /* border: 2px solid red; */
+}
+
+.bot-bot {
+    margin-top: 1rem;
+}
+
+.f12 a,
+.f12 span {
+    font-size: .8rem;
+    color: #d5d5d5;
+    font-weight: lighter;
+    text-decoration: none;
+}
+
+.f12 {
+    text-align: center;
+}
+
+.h18 {
+    height: 18px;
+    width: 18px;
+}
+
+@media screen and (max-width: 1440px) {
+    .footerAll {
+        top: 2388px;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .btn-line {
+        top: 2634px;
+    }
+}
+
+
+/* fixed二维码和返回箭头链接 */
+
+.erweima img,
+.frag img {
+    position: fixed;
+    right: 1rem;
+    bottom: 5.5rem;
+    height: 33px;
+    width: 33px;
+    border-radius: 5px;
+    opacity: .3;
+    cursor: pointer;
+    /* background: lightgray; */
+}
+
+@media screen and (max-width: 576px) {
+    #disPlay {
+        height: 38%;
+    }
+}
+
+.frag img {
+    position: fixed;
+    bottom: 3rem;
+}
+
+#disPlay a,
+disPlay span {
+    display: inline !important;
+    font-weight: lighter !important;
+}

@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+
+/* 清除浮动 */
+
+.clear:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+/* 解决外边距 */
+
+.overflow:before {
+    content: "";
+    display: table;
+}
+
+div {
+    display: block;
+}
+
+
+/* 页头 */

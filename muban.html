@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<style>
+    #aaa {
+        width: 200px;
+        height: 600px;
+        background: url(img/WechatIMG4.png) no-repeat;
+        transition: all 1s;
+    }
+    
+    #aaa:hover {
+        background: url(img/WechatIMG6.png) no-repeat;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <!--a:最前面不隐藏的标题-->
+            <a href="#" class="navbar-brand">Bootstrap</a>
+
+            <!--小屏幕下右侧的按钮：上面有三条短横线-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#content">
+                        <!--三条短横线-->
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+            <!--导航栏里的菜单项：大屏幕下平铺，小屏幕下隐藏-->
+            <div id="content" class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">boot中文文档</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">jQueryAPI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">SCSS教程</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">网站实例</a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+
+    </div>
+    <div id="aaa"></div>
+
+</body>
+
+</html>
