@@ -1,0 +1,414 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+
+/* 清除浮动 */
+
+.clear:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+/* 解决外边距 */
+
+.overflow:before {
+    content: "";
+    display: table;
+}
+
+div {
+    display: block;
+}
+
+#firstDiv {
+    position: relative;
+}
+
+
+/* 页头 */
+
+.myNav {
+    width: 100%;
+    height: 3em;
+    background: white;
+    border-bottom: 1px solid transparent;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.06);
+    position: fixed;
+    z-index: 10;
+}
+
+.navHeader {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    z-index: inherit;
+}
+
+.navPic {
+    float: left;
+    width: 5em;
+    height: 100%;
+}
+
+.navPic>img {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 6em;
+    width: 72px;
+    height: 25px;
+    margin-top: 18px;
+}
+
+.navList {
+    height: 100%;
+    text-align: center;
+    line-height: 3em;
+    margin-right: 10em;
+}
+
+.navList>li {
+    height: 100%;
+    line-height: 2em;
+    display: inline-block;
+    list-style: none;
+    transition: all 1s;
+}
+
+.navList li a {
+    padding: 10px 10px;
+    line-height: 3em;
+    color: #555;
+    transition: all 1s;
+}
+
+ul {
+    list-style: none;
+    margin-top: -7px;
+}
+
+.dropCss {
+    display: flex;
+    justify-content: center;
+}
+
+.dropCss>li {
+    margin: 0 2%;
+}
+
+.drop>li {
+    opacity: 0;
+    transform-origin: top center;
+    margin: -5px;
+}
+
+.drop li a {
+    margin: -23px;
+}
+
+.drop li a,
+a {
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+
+/* ------------------纯css菜单，后期考虑改用jq------------------ */
+
+.drop-down {
+    position: relative;
+}
+
+.drop-down-content {
+    padding: 0;
+    display: none;
+    position: absolute;
+}
+
+.drop-down-content li {
+    height: 30px;
+}
+
+.nav .drop-down:hover .drop-down-content {
+    display: block !important;
+    width: 80px;
+    height: 120px;
+    background: white !important;
+    box-shadow: 0 0 3px 0;
+    border-radius: 5px;
+}
+
+
+/* css动画 */
+
+@keyframes menu {
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.dropCss {
+    letter-spacing: 1px;
+}
+
+.navList li a:hover {
+    text-decoration: none;
+    color: red;
+    font-weight: 800 !important;
+}
+
+
+/* 主体 */
+
+.recommend {
+    position: relative !important;
+}
+
+.w1120 {
+    width: 1120px;
+    margin: 0 auto;
+    height: 2000px;
+    /* border: 1px solid red; */
+    position: relative;
+}
+
+.navListTwo {
+    width: 1120px;
+    position: absolute;
+    top: 3.2em;
+    margin: 0 auto !important;
+    border-bottom: 1px solid transparent;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.06);
+}
+
+.listNext {
+    width: 1120px;
+    /* padding-left: 50px; */
+    /* margin: 0 auto; */
+}
+
+.navListTwo a {
+    /* float: left; */
+    display: inline-block;
+    width: 75px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: #555;
+    /* border: 1px solid black; */
+}
+
+a:hover {
+    text-decoration: none;
+    color: red;
+}
+
+
+/* 主体瀑布流 */
+
+.w250 {
+    /* border: 1px solid red; */
+    height: 2000px;
+    width: 250px;
+    position: absolute;
+    top: 105px;
+    left: 11px;
+    animation: sc 12s ease-in-out infinite;
+}
+
+.w250Next {
+    /* border: 1px solid red; */
+    height: 2000px;
+    width: 250px;
+    position: absolute;
+    top: 105px;
+    left: 293px;
+    animation: sc1 8s ease-in-out infinite;
+}
+
+.w250Next2 {
+    /* border: 1px solid red; */
+    height: 2000px;
+    width: 250px;
+    position: absolute;
+    top: 105px;
+    left: 573px;
+    animation: sc 8s ease-in-out infinite;
+}
+
+.w250Next3 {
+    /* border: 1px solid red; */
+    height: 2000px;
+    width: 250px;
+    position: absolute;
+    top: 105px;
+    left: 853px;
+    animation: sc1 12s ease-in-out infinite;
+}
+
+.recDiv {
+    border: 1px solid transparent;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.12);
+    width: 250px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: all 1s;
+    position: relative;
+}
+
+.recDiv:hover {
+    transform: scale(1.02);
+    background: rgba(80, 80, 80, 0.12);
+}
+
+.recImg {
+    width: 250px;
+}
+
+.recImg>span {
+    width: 250px;
+    height: 50px;
+    /* border: 1px solid blue; */
+    margin-top: 10px;
+    padding: 0px 10px;
+    /* 超出指定行数后的文字隐藏并显示... */
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.recImg img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+}
+
+.recUid {
+    /* border: 1px solid black; */
+    width: 250px;
+    height: 52px;
+    position: relative;
+    /* padding-left: 10px; */
+}
+
+.recUid>img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 13px;
+    cursor: pointer;
+}
+
+
+/************ 收藏喜欢点赞 *************/
+
+.zan {
+    float: left;
+    width: 80px;
+    height: 23px;
+    /* border: 1px solid red; */
+    position: absolute;
+    top: 15px;
+    left: 160px;
+    cursor: pointer;
+    /* border: none !important; */
+    background: url(../img/heart.png) no-repeat;
+}
+
+.sum {
+    position: absolute;
+    left: 30px;
+    width: 50px;
+    height: 23px;
+    font-size: 14px !important;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+.heartAnimation {
+    display: inline-block;
+    -webkit-animation-name: heartBlast;
+    animation-name: heartBlast;
+    -webkit-animation-duration: .8s;
+    animation-duration: .8s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-timing-function: steps(28);
+    animation-timing-function: steps(28);
+    background-position: right;
+}
+
+.heart {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+}
+
+.recUid img:last-child {
+    margin-left: 147px;
+}
+
+.coverLight {
+    position: relative;
+    height: 100%;
+    width: 250px;
+    /* background: red; */
+    z-index: 12;
+}
+
+@keyframes sc {
+    0% {
+        display: inline-block;
+    }
+    49% {
+        opacity: 0.1;
+        transform: scale(1.02);
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes sc1 {
+    0% {
+        display: inline-block;
+    }
+    69% {
+        opacity: 0.1;
+        transform: scale(1.02);
+    }
+    70% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* ....................................................... */

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>register</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/register.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <style>
+        .reg_header {
+            background: url(img/logo.png) no-repeat;
+            background-position: 5%;
+            z-index: 3;
+        }
+        
+        .map {
+            background: url(img/bacimage.jpg) no-repeat center center;
+            background-size: 100% 100%;
+            z-index: 5;
+        }
+    </style>
+
+    <body>
+        <div id="registMain" class="">
+            <!-- 页头 -->
+            <div class="reg_header">
+                <div class="regMsg overflow">
+                    <a href="zhiye.html">招聘首页</a><span>&nbsp;|&nbsp;</span>
+                    <a href="login.html">登录</a><span>&nbsp;|&nbsp;</span>
+                    <a href="register.html">注册</a>
+                </div>
+            </div>
+            <!-- 主体 -->
+
+            <div class="map overflow">
+                <div class="next">
+                    <div class="mapNext">
+                        <h5 class="rigster_size">手机号注册</h5>
+                        <div class="mapNext2">
+                            <div class="next3" style="display:block">
+                                <form action="">
+                                    <div class="regip">
+                                        <input type="text" id="phone" name="phone" class="reginput reg_mobile" placeholder="请输入手机号" autocomplete="off">
+                                        <span>*</span>
+                                        <span class="mobile_hint"></span>
+                                    </div>
+                                    <div class="regip">
+                                        <input type="password" id="pwd" name="password" class="reginput reg_password" name="reg_password" placeholder="请输入密码">
+                                        <span>*</span>
+                                        <span class="password_hint"></span>
+                                    </div>
+                                    <div class="regip">
+                                        <input type="password" id="repwd" name="repwd" class="reginput reg_confirm" name="reg_confirm" placeholder="请确认密码">
+                                        <span>*</span>
+                                        <span class="confirm_hint"></span>
+                                    </div>
+                                    <div class="regip">
+                                        <input type="text" class="reginput" name="yzm" id="yzm" placeholder="请输入验证码">
+                                        <input type="button" class="zhucema" id="btnSendCode" value="获取验证码" onClick="sendMessage()">
+                                        <span>*</span>
+                                    </div>
+                                    <div class="btn_register">
+                                        <input type="button" id="register_btn" class="regiser_btn" value="注&nbsp;册" onclick="zhuce()">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="otherlogin">
+                        <div class="otheridea">
+                            <div class="autologin">使用以下账号直接登录</div>
+                            <ul class="ul1 clearfix">
+                                <li>
+                                    <a href="#" class="weibo" title="使用新浪微博帐号登录"><img src="img/wb-icons.png" class="wb"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="koukou" title="使用腾讯QQ帐号登录"><img src="img/qq_3d.png" class="qq"></a>
+                                </li>
+                            </ul>
+                            <div class="autologin2">
+                                <a href="login.html">点此登录</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="regfoot">
+                <div class="footMsg">
+                    <span>©2018 小红书</span>
+                    <a href="#"><img src="img/beian.png" class="plic">京ICP备05051632号 京公网安备 11010802020454号</a><span>帮助热线：4006506886</span>
+                </div>
+            </div>
+            <script>
+                // user
+                var password_Boolean = false;
+                var varconfirm_Boolean = false;
+                var Mobile_Boolean = false;
+                // Mobile
+                $('.reg_mobile').blur(function() {
+                    if ((/^1[34578]\d{9}$/).test($(".reg_mobile").val())) {
+                        $('.mobile_hint').html("✓").css("color", "green");
+                        Mobile_Boolean = true;
+                    } else {
+                        $('.mobile_hint').html("×").css("color", "red");
+                        Mobile_Boolean = false;
+                    }
+                });
+                // password
+                $('.reg_password').blur(function() {
+                    if ((/^[a-z0-9_-]{6,16}$/).test($(".reg_password").val())) {
+                        $('.password_hint').html("✓").css("color", "green");
+                        password_Boolean = true;
+                    } else {
+                        $('.password_hint').html("×").css("color", "red");
+                        password_Boolean = false;
+                    }
+                });
+
+                // password_confirm
+                $('.reg_confirm').blur(function() {
+                    if (($(".reg_password").val()) == ($(".reg_confirm").val())) {
+                        $('.confirm_hint').html("✓").css("color", "green");
+                        varconfirm_Boolean = true;
+                    } else {
+                        $('.confirm_hint').html("×").css("color", "red");
+                        varconfirm_Boolean = false;
+                    }
+                });
+                // click
+                $('.btn_register').click(function() {
+                    if (Mobile_Boolean && password_Boolean && varconfirm_Boolean == true) {} else {
+                        alert("请完善信息");
+                    }
+                });
+            </script>
+            <!-- 验证码 -->
+            <script>
+                var phoneReg = /^1[34578]\d{9}$/;
+                var count = 60;
+                var InterValYzm;
+                var daojishi;
+
+                function sendMessage() {
+                    daojishi = count;
+                    var phone = $.trim($('.reg_mobile').val());
+                    if (!phoneReg.test(phone)) {
+                        alert(" 请输入有效的手机号码");
+                        return false;
+                    }
+                    //设置button效果，开始计时
+                    $("#btnSendCode").attr("disabled", "true");
+                    $("#btnSendCode").val(+daojishi + "秒再获取");
+                    InterValYzm = window.setInterval(SetRemainTime, 1000);
+                }
+
+                function SetRemainTime() {
+                    if (daojishi == 0) {
+                        window.clearInterval(InterValYzm); //停止计时器
+                        $("#btnSendCode").removeAttr("disabled"); //启用按钮
+                        $("#btnSendCode").val("重新发送");
+                    } else {
+                        daojishi--;
+                        $("#btnSendCode").val(+daojishi + "秒再获取");
+                    }
+                }
+            </script>
+            <!-- ajax请求 -->
+            <script src="./assets/js/register.js"></script>
+    </body>
+
+</html>

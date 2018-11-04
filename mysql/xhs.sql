@@ -6,21 +6,36 @@ DROP DATABASE IF EXISTS xhs;
 CREATE DATABASE xhs CHARSET=UTF8;
 USE xhs;
 -- 
--- 创建数据表
--- 创建用户表：xhs_user
-DROP TABLE IF EXISTS 
+-- 数据表
+-- 用户表：xhs_user
+DROP TABLE IF EXISTS xhs_user;
 CREATE TABLE xhs_user(
   uid INT PRIMARY KEY AUTO_INCREMENT,
-  uname VARCHAR(8) default NULL,
-  upwd VARCHAR(32) default NULL,
-  email VARCHAR(64) default NULL,
-  phone  VARCHAR(16) default NULL,
-  avatar VARCHAR(128) default NULL,
-  user_name VARCHAR(18) default NULL,
+  uname VARCHAR(8) ,
+  password VARCHAR(32) ,
+  email VARCHAR(64) ,
+  phone  VARCHAR(16) ,
+  avatar VARCHAR(128) ,      #头像 
+  user_name VARCHAR(18) ,
   birthday DATE,
-  gender CHAR(1) default NULL
+  gender CHAR(1) 
 );
 
+-- 日志表 
+DROP TABLE IF EXISTS xhs_diary;
+CREATE TABLE xhs_diary(
+id INT PRIMARY KEY AUTO_INCREMENT,
+title VARCHAR(255),
+diary VARCHAR(2048),
+img VARCHAR(255),
+dtime DATETIME
+);
 
-
--- 创建日志表 
+-- 评论表
+DROP TABLE IF EXISTS xhs_comment;
+CREATE TABLE xhs_comment(
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  nid INT,
+  dtime DATETIME,
+  content VARCHAR(25),
+);
